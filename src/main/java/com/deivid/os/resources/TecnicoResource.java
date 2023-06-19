@@ -47,7 +47,7 @@ public class TecnicoResource {
 	}
 	
 	@PostMapping
-	//receber no corpo da requisição o parametro do tipo  
+	//receber no corpo da requisição o parametro do tipo  - @Valid realiza a validação do CPF que configuramos no TecnicoDTO
 	public ResponseEntity<TecnicoDTO> create(@RequestBody @Valid TecnicoDTO objDTO){ 
 		Tecnico newObj = service.create(objDTO);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newObj.getId()).toUri();
