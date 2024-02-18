@@ -6,6 +6,8 @@ import java.time.LocalDateTime;
 import javax.validation.constraints.NotEmpty;
 
 import com.deivid.os.domain.OS;
+import com.deivid.os.domain.enuns.Prioridade;
+import com.deivid.os.domain.enuns.Status;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class OSDTO implements Serializable {
@@ -74,8 +76,8 @@ public class OSDTO implements Serializable {
 	}
 
 
-	public Integer getPrioridade() {
-		return prioridade;
+	public Prioridade getPrioridade() {
+		return Prioridade.toEnum(this.prioridade);
 	}
 
 
@@ -91,8 +93,8 @@ public class OSDTO implements Serializable {
 		this.observacoes = observacoes;
 	}
 
-	public Integer getStatus() {
-		return status;
+	public Status getStatus() {
+		return Status.toEnum(this.status);
 	}
 
 	public void setStatus(Integer status) {
